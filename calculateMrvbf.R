@@ -18,6 +18,8 @@ uinfo <- data.frame(t(Sys.info()))
 Rinfo <- data.frame(t(R.Version()))
 
 library(rgdal, lib.loc = paste0(getwd(),'/Rlibs'))
+library(gstat, lib.loc = paste0(getwd(),'/Rlibs'))
+library(star, lib.loc = paste0(getwd(),'/Rlibs'))
 library(RSAGA, lib.loc = paste0(getwd(),'/Rlibs'))
 library(raster, lib.loc = paste0(getwd(),'/Rlibs'))
 library(tools)
