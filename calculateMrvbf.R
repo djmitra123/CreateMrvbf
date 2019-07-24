@@ -102,7 +102,7 @@ for(i in 1:length(files)){
     
     rsaga.geoprocessor("ta_morphometry", module = 8, env = myenv,
                        param = list(DEM = paste(in.dir, files[i],sep = "/"),
-                                    MRVBF = paste(out.dir, files.list[i], sep = "/"),
+                                    MRVBF = paste0(out.dir,'/' ,files.list[i],'.sgrd'),
                                     T_SLOPE = as.character(t_slp),
                                     T_PCTL_V = t_pctl_v,
                                     T_PCTL_R = t_pctl_r,
