@@ -38,14 +38,14 @@ cmd /c choco install -y r.project --version 3.5.3 --force
 echo.
 echo.
 echo "INSTALLING SAGA!!!..."
-powershell Expand-Archive -Force .\saga-7.0.0_x64.zip C:\saga700
+powershell Expand-Archive -Force .\saga-6.2.0_x64.zip C:\saga620
 
 
 echo.
 echo.
 dir
 "C:\Program Files\R\R-3.5.3\bin\x64\Rscript.exe" calculateMrvbf.R
-rmdir /S /Q C:\saga700
+rmdir /S /Q C:\saga620
 cmd /c choco uninstall -y r.project --version 3.5.3 --force
 GOTO :end
 

@@ -28,7 +28,7 @@ library(tools)
 # 9x9 Focal Mean DEM
 
 ##Setting up SAGA environment
-myenv <- rsaga.env(workspace=paste0(getwd(),"/temp"), path="C:/saga700/saga-7.0.0_x64")
+myenv <- rsaga.env(workspace=paste0(getwd(),"/temp"), path="C:/saga620/saga-6.2.0_x64")
 
 
 ###Get SAGA grids
@@ -65,7 +65,7 @@ cat('\n')
 cat('\n')
 cat("=================================================================================")
 cat('\n')
-cat('INITIATING MRVBF CALCULATIONS (POWERED BY SAGA-GIS 7.0.0)')
+cat('INITIATING MRVBF CALCULATIONS (POWERED BY SAGA-GIS 6.2.0)')
 cat('\n')
 cat("=================================================================================")
 cat('\n')
