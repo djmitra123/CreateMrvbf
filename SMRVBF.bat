@@ -33,12 +33,20 @@ echo.
 
 echo.
 echo "CHECKING R INSTALLATION...."
+
+set testR="C:\Program Files\R\R-3.5.3\"
+IF EXIST %testR% (
+echo "R-3.5.3 already exists in the system"
+echo "Skipping R installation!.." 
+) ELSE (
 cmd /c @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 cmd /c choco install -y r.project --version 3.5.3 --force
+)
+
 echo.
 echo.
 echo "INSTALLING SAGA!!!..."
-powershell Expand-Archive -Force .\saga-6.2.0_x64.zip C:\saga620
+cmd /c @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -Command "& '%cwd%\ps_check.ps1'"
 
 
 echo.
@@ -46,8 +54,12 @@ echo.
 dir
 "C:\Program Files\R\R-3.5.3\bin\x64\Rscript.exe" calculateMrvbf.R
 rmdir /S /Q C:\saga620
+IF EXIST %testR% (
+GOTO :end
+) ELSE (
 cmd /c choco uninstall -y r.project --version 3.5.3 --force
 GOTO :end
+)
 
 		
 :end
